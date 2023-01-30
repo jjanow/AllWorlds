@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 namespace AllWorlds.Classes
 {
-    class Actor
+    public class Actor
     {
         public enum races
         {

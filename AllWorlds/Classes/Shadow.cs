@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AllWorlds.Classes
 {
-    class Shadow
+    public class Shadow
     {
         public enum tags
         {
