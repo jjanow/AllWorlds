@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AllWorlds.Classes;
 
 namespace AllWorlds
@@ -11,14 +7,11 @@ namespace AllWorlds
     {
         static void Main(string[] args)
         {
-            Player player;
-            player = new Player();
-
-            player.SetRace(Actor.races.elf);
-            Console.WriteLine(player.GetRace());
-
-            player.SetGender(Actor.genders.male);
-            Console.WriteLine(player.GetGender());
+            Player player = new Player();
+            player.Race = Actor.races.elf; // Directly set the Race property
+            Console.WriteLine(player.Race); // Directly access the Race property
+            player.Gender = Actor.genders.male;
+            Console.WriteLine(player.Gender);
 
             Shadow shadow, shadow2, shadow3, shadow4;
             shadow = new Shadow("buff1", 20, 5, 100);
@@ -27,12 +20,19 @@ namespace AllWorlds
             shadow4 = new Shadow("buff4", 30, 5, 100);
 
             shadow.GetProperties();
-
             player.AddShadow(shadow);
             player.AddShadow(shadow2);
             player.AddShadow(shadow3);
             player.AddShadow(shadow4);
+
             player.GetShadows();
+
+            // Example of setting a property with validation
+            player.Name = "Player1"; // Valid name
+            Console.WriteLine(player.Name);
+
+            player.Psi = -10; // Will be clamped to 0
+            Console.WriteLine(player.Psi);
 
             Console.ReadKey();
         }

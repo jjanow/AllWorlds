@@ -10,10 +10,8 @@ namespace ActorTest
         public void ActorTestValid()
         {
             var actor = new Actor();
-
-            actor.SetRace(Actor.races.elf);
-
-            Assert.AreEqual(actor.GetRace(), "elf");
+            actor.Race = Actor.races.elf; // Use the Race property instead of SetRace method
+            Assert.AreEqual(actor.Race, "elf");
         }
     }
 }

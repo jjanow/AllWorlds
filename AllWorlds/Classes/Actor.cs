@@ -60,7 +60,7 @@ namespace AllWorlds.Classes
         {
             foreach (Shadow sh in shadows)
             {
-                Console.WriteLine(sh.GetName());
+                Console.WriteLine(sh.Name); // Use the Name property instead of GetName method
             }
         }
     }
