@@ -8,17 +8,21 @@ namespace AllWorlds.Classes
     {
         public enum races { human, elf, dwarf, troll, halfling, gnome }
         public enum genders { male, female, other, none }
+        public enum CharacterAttributes
+        {
+            Strength,
+            Dexterity,
+            Intelligence,
+            Willpower,
+            Speed,
+            Vitality,
+            HP,
+            SP,
+            Psi
+        }
 
         private string name;
-        private int strength;
-        private int dexterity;
-        private int intelligence;
-        private int willpower;
-        private int speed;
-        private int vitality;
-        private int hp;
-        private int sp;
-        private int psi;
+        private Dictionary<CharacterAttributes, int> attributes = new Dictionary<CharacterAttributes, int>();
         private races race;
         private genders gender;
         private List<Shadow> shadows = new List<Shadow>();
@@ -39,17 +43,26 @@ namespace AllWorlds.Classes
             }
         }
 
-        public int Strength { get => strength; set => strength = Math.Max(0, value); }
-        public int Dexterity { get => dexterity; set => dexterity = Math.Max(0, value); }
-        public int Intelligence { get => intelligence; set => intelligence = Math.Max(0, value); }
-        public int Willpower { get => willpower; set => willpower = Math.Max(0, value); }
-        public int Speed { get => speed; set => speed = Math.Max(0, value); }
-        public int Vitality { get => vitality; set => vitality = Math.Max(0, value); }
-        public int HP { get => hp; set => hp = Math.Max(0, value); }
-        public int SP { get => sp; set => sp = Math.Max(0, value); }
-        public int Psi { get => psi; set => psi = Math.Max(0, value); }
+
         public races Race { get => race; set => race = value; }
         public genders Gender { get => gender; set => gender = value; }
+
+        public int GetAttribute(CharacterAttributes attribute)
+        {
+            return attributes.TryGetValue(attribute, out int value) ? value : 0;
+        }
+
+        public void SetAttribute(CharacterAttributes attribute, int value)
+        {
+            if (value >= 0)
+            {
+                attributes[attribute] = value;
+            }
+            else
+            {
+                Console.WriteLine($"{attribute} cannot be negative.");
+            }
+        }
 
         public void AddShadow(Shadow shadow)
         {

@@ -1,5 +1,6 @@
 ﻿using System;
 using AllWorlds.Classes;
+using static AllWorlds.Classes.Actor;
 
 namespace AllWorlds
 {
@@ -31,8 +32,12 @@ namespace AllWorlds
             player.Name = "Player1"; // Valid name
             Console.WriteLine(player.Name);
 
-            player.Psi = -10; // Will be clamped to 0
-            Console.WriteLine(player.Psi);
+            // Set the Psi attribute using the new method
+            player.SetAttribute(CharacterAttributes.Psi, -10); // Will be clamped to 0
+
+            // Get the Psi attribute using the new method
+            int psiValue = player.GetAttribute(CharacterAttributes.Psi);
+            Console.WriteLine(psiValue);
 
             Console.ReadKey();
         }
