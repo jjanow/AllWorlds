@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="ActorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShadowTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

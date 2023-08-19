@@ -76,5 +76,10 @@ namespace AllWorlds.Classes
                 Console.WriteLine(sh.Name); // Use the Name property instead of GetName method
             }
         }
+
+        public bool ContainsShadow(Shadow shadow)
+        {
+            return shadows.Contains(shadow);
+        }
     }
 }
