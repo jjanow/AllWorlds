@@ -39,7 +39,11 @@ namespace AllWorlds
             int psiValue = player.GetAttribute(CharacterAttributes.Psi);
             Console.WriteLine(psiValue);
 
-            Console.ReadKey();
+            // Wait for user input only if running interactively
+            if (Environment.UserInteractive && Console.IsInputRedirected == false)
+            {
+                Console.ReadKey();
+            }
         }
     }
 }

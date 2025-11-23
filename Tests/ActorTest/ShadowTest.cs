@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AllWorlds.Classes;
 
-namespace ShadowTest
+namespace ActorTest
 {
     [TestClass]
     public class ShadowTest

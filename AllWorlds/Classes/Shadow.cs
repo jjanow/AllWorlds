@@ -6,12 +6,12 @@ namespace AllWorlds.Classes
     {
         public enum tags { Buff, Debuff, HoT, Skill }
 
-        private string name;
+        private string? name;
         private int level;
         private int bonus;
         private int duration;
 
-        public string Name
+        public string? Name
         {
             get => name;
             set

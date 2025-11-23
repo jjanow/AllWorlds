@@ -1,6 +1,35 @@
 # AllWorlds
 
-AllWorlds is a codebase for a buffing system for a video game. It includes classes to represent characters (actors), shadows (effects), and players.
+AllWorlds is a cross-platform codebase for a buffing system for a video game. It includes classes to represent characters (actors), shadows (effects), and players.
+
+## Requirements
+
+- .NET 9.0 SDK or later
+- Works on Windows, Linux, and macOS
+
+## Building
+
+To build the solution:
+
+```bash
+dotnet build AllWorlds.sln
+```
+
+## Running
+
+To run the game:
+
+```bash
+dotnet run --project AllWorlds/AllWorlds.csproj
+```
+
+## Testing
+
+To run the unit tests:
+
+```bash
+dotnet test
+```
 
 ## Classes
 

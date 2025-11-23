@@ -21,18 +21,18 @@ namespace AllWorlds.Classes
             Psi
         }
 
-        private string name;
+        private string? name;
         private Dictionary<CharacterAttributes, int> attributes = new Dictionary<CharacterAttributes, int>();
         private races race;
         private genders gender;
         private List<Shadow> shadows = new List<Shadow>();
 
-        public string Name
+        public string? Name
         {
             get => name;
             set
             {
-                if (Regex.IsMatch(value, @"^[a-zA-Z0-9]+$"))
+                if (value != null && Regex.IsMatch(value, @"^[a-zA-Z0-9]+$"))
                 {
                     name = value;
                 }
@@ -61,6 +61,7 @@ namespace AllWorlds.Classes
             else
             {
                 Console.WriteLine($"{attribute} cannot be negative.");
+                attributes[attribute] = 0; // Clamp to 0
             }
         }
 
