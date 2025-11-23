@@ -259,3 +259,8 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+# Old .NET Framework build artifacts (not used in cross-platform .NET)
+*.exe
+*.exe.config
+*.exe.mdb
